@@ -6,10 +6,68 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct ContentDetailView: View {
+    
+    @EnvironmentObject var model:ContentModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        let lesson = model.currentLesson
+        let url = URL(string: Constants.videoHostUrl + (lesson?.video ?? ""))
+        
+        VStack {
+            
+            // video
+            if url != nil {
+                
+                VideoPlayer(player: AVPlayer(url: url!))
+                    .cornerRadius(10)
+            }
+            // Description:
+            CodeTextView()
+            
+            if model.hasNextLesson() {
+            Button {
+                model.nextLesson()
+            } label: {
+                
+                ZStack {
+                    
+                    Rectangle()
+                        .frame(height:48)
+                        .foregroundColor(.green)
+                        .cornerRadius(5)
+                    
+                    Text("Next Lesson: \(model.currentModule!.content.lessons[model.currentLessonIndex].title)")
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.white)
+                }
+            }
+
+            } else {
+                
+                Button {
+                    model.currentContentSelected = nil
+                } label: {
+                    
+                    ZStack {
+                        
+                        Rectangle()
+                            .frame(height:48)
+                            .foregroundColor(.green)
+                            .cornerRadius(5)
+                        
+                        Text("Complete")
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.white)
+                    }
+                }
+            }
+        }
+        .padding()
+        .navigationBarTitle(lesson?.title ?? "")
     }
 }
 
