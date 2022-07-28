@@ -26,7 +26,7 @@ struct HomeView: View {
                         
                         ForEach(model.modules ) { module in
                             
-                            VStack(alignment: .leading, spacing:20) {
+                            VStack(spacing:20) {
                                 
                                 NavigationLink(
                                     destination: ContentView().onAppear(perform: {
@@ -71,6 +71,9 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView().environmentObject(ContentModel())
+        Group {
+            HomeView().environmentObject(ContentModel()).previewInterfaceOrientation(.portraitUpsideDown)
+            HomeView().environmentObject(ContentModel())
+        }
     }
 }

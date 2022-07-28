@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C621F9C28920C69005ACAE3 /* RectangleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C621F9B28920C69005ACAE3 /* RectangleCard.swift */; };
 		1C9241AD288A3B3E008E9045 /* LearningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9241AC288A3B3E008E9045 /* LearningApp.swift */; };
 		1C9241AF288A3B3E008E9045 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9241AE288A3B3E008E9045 /* HomeView.swift */; };
 		1C9241B1288A3B47008E9045 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C9241B0288A3B47008E9045 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C621F9B28920C69005ACAE3 /* RectangleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleCard.swift; sourceTree = "<group>"; };
 		1C9241A9288A3B3E008E9045 /* LearningApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C9241AC288A3B3E008E9045 /* LearningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningApp.swift; sourceTree = "<group>"; };
 		1C9241AE288A3B3E008E9045 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -38,7 +40,7 @@
 		1C9241C8288A62E9008E9045 /* HomeViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewRow.swift; sourceTree = "<group>"; };
 		1C9241CA288E0ECF008E9045 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1C9241CC288E2C24008E9045 /* ContentViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewRow.swift; sourceTree = "<group>"; };
-		1C9241CE288E3062008E9045 /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
+		1C9241CE288E3062008E9045 /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		1C9241D1288E4189008E9045 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		1C9241D3288E5395008E9045 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1C9241F1288F79D4008E9045 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				1C9241CE288E3062008E9045 /* ContentDetailView.swift */,
 				1C9241F1288F79D4008E9045 /* CodeTextView.swift */,
 				1CFB790C2890C84A005C5E65 /* TestView.swift */,
+				1C621F9B28920C69005ACAE3 /* RectangleCard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				1C9241CD288E2C24008E9045 /* ContentViewRow.swift in Sources */,
 				1C9241F2288F79D4008E9045 /* CodeTextView.swift in Sources */,
 				1C9241C1288A3CE0008E9045 /* ContentModel.swift in Sources */,
+				1C621F9C28920C69005ACAE3 /* RectangleCard.swift in Sources */,
 				1C9241C7288A445B008E9045 /* Models.swift in Sources */,
 				1C9241D4288E5395008E9045 /* Constants.swift in Sources */,
 			);
