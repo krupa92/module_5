@@ -99,15 +99,36 @@ class ContentModel : ObservableObject {
         
         currentLessonIndex += 1
         
-        currentLessonIndex < currentModule!.content.lessons.count
+        if currentLessonIndex < currentModule!.content.lessons.count {
         
         currentLesson = currentModule!.content.lessons[currentLessonIndex]
         codeDiscription = addStyling(currentLesson!.explanation)
+            
+        } else {
+            
+            currentLessonIndex = 0
+            currentLesson = nil
+        }
     }
     
     func hasNextLesson() -> Bool {
         
         return currentLessonIndex + 1 < currentModule!.content.lessons.count
+    }
+    
+    func nextQuestion() {
+        
+        currentQuestionIndex += 1
+        
+        if currentQuestionIndex < currentModule!.test.questions.count {
+            
+            currentQuestion = currentModule!.test.questions[currentQuestionIndex]
+            codeDiscription = addStyling(currentQuestion!.content)
+        } else {
+            
+            currentQuestionIndex = 0
+            currentQuestion = nil
+        }
     }
     
     func beginTest(_ moduleId:Int) {

@@ -76,12 +76,23 @@ struct TestView: View {
                 // submit button
                 Button {
                     
-                    issumbited = true
-                    
-                    if selectedAnswerIndex == model.currentQuestion!.correctIndex {
+                    if issumbited == true {
                         
-                        numCorrect += 1
+                        model.nextQuestion()
+                        
+                        issumbited = false
+                        selectedAnswerIndex = 0
+                    } else {
+                        
+                        issumbited = true
+                        
+                        if selectedAnswerIndex == model.currentQuestion!.correctIndex {
+                            
+                            numCorrect += 1
+                        }
                     }
+                    
+                    
                     
                 } label: {
                     ZStack {
@@ -89,7 +100,7 @@ struct TestView: View {
                         RectangleCard(color: .green)
                             .frame(height:48)
                         
-                        Text("Submit")
+                        Text(buttonText)
                             .fontWeight(.bold)
                             .foregroundColor(Color.white)
                     }.padding()
@@ -100,9 +111,26 @@ struct TestView: View {
         }
         else {
             
-            ProgressView()
+            TestResultView(numCorrect: numCorrect)
             
             
+        }
+    }
+    
+    var buttonText:String {
+        
+        if issumbited == true {
+            if model.currentQuestionIndex + 1  == model.currentModule!.test.questions.count {
+                
+                return "Finish"
+            } else {
+                
+                return "Next"
+            }
+            
+        } else {
+            
+            return "Submit"
         }
     }
 }
