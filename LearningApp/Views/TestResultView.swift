@@ -10,13 +10,34 @@ import SwiftUI
 struct TestResultView: View {
     
     @EnvironmentObject var model:ContentModel
-    var numCorrect = 0
+    
+    var numCorrect:Int
+    
+    var resultHeading:String {
+        
+        guard model.currentModule != nil else {
+            
+            return ""
+        }
+        
+        if numCorrect > 7 {
+            
+            return "Awesome!"
+        } else if numCorrect > 4 {
+            
+            return "Doing Great!"
+        } else {
+            
+            return "keep learning"
+            
+        }
+    }
     
     var body: some View {
         
         VStack {
             Spacer()
-            Text("Doing great")
+            Text(resultHeading)
                 .font(.title)
             Spacer()
             Text("You got \(numCorrect) out of \(model.currentModule?.test.questions.count ?? 0) questions")
@@ -38,11 +59,5 @@ struct TestResultView: View {
             }
             Spacer()
         }
-    }
-}
-
-struct TestResultView_Previews: PreviewProvider {
-    static var previews: some View {
-        TestResultView()
     }
 }
